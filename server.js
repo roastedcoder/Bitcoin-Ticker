@@ -17,6 +17,26 @@ app.post("/", function(req, res) {
 
     let url = BASE_URL + crypto + fiat;
 
+
+    /*
+        if we want to use queryParameter in our url we can use options instead of url
+        options is an js-object
+
+        var options = {
+            url: BASE_URL,
+            method: "GET",
+            qs: { // qs is queryString to be appended to the url
+                from: crypto,
+                to: fiat,
+                amount: req.body.amount
+                .
+                .
+                .
+            }
+        };
+
+    */
+
     request(url, function(err, response, body) {
         
         console.log(response.statusCode);
